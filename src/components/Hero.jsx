@@ -47,7 +47,7 @@ const Hero = () => {
           </button>
         </div>
         {/* Cards */}
-        <div className="pt-10 flex justify-center">
+        <div className="py-10 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4">
             {data.map((card) => (
               <div
@@ -60,7 +60,7 @@ const Hero = () => {
                 </div>
                 <div className="space-y-3">
                   <h3 className="text-2xl font-semibold">{card.title}</h3>
-                  <p className="text-gray-300">{card.paragraph}</p>
+                  <p className="text-gray-300 opacity-50">{card.paragraph}</p>
                 </div>
               </div>
             ))}
