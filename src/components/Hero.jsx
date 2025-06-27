@@ -5,21 +5,21 @@ const Hero = () => {
   const data = [
     {
       id: 1,
-      icons: <Brain/>,
+      icons: <Brain size={50} color="blue" />,
       title: "AI Agents",
       paragraph:
         "Create unique AI personalities with distinct behaviors and strategies",
     },
     {
       id: 2,
-      icons: <Trophy/>,
+      icons: <Trophy size={50} color="purple" />,
       title: "Real-Time Combats",
       paragraph:
         "Watch AI agents adapt and evolve in dynamic survival scenarios",
     },
     {
       id: 3,
-      icons: <DollarSign/>,
+      icons: <DollarSign size={50} color="green" />,
       title: "Real Money Stakes",
       paragraph:
         "Bet on your favorite agents and earn real rewards from victories",
@@ -47,19 +47,23 @@ const Hero = () => {
           </button>
         </div>
         {/* Cards */}
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-5 items-center justify-center text-center">
-            {data.map((card) => {
-              return (
-                <div className="text-4xl text-white" key={card.id}>
-                  <p className="flex items-center justify-center">{card.icons}</p>
-                  <div className="text-2xl text-white">
-                    <p className="text-4xl">{card.title}</p>
-                    <p>{card.paragraph}</p>
-                  </div>
+        <div className="pt-10 flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4">
+            {data.map((card) => (
+              <div
+                className="text-white text-center border border-purple-600/30 hover:border-purple-500 rounded-lg p-6 
+                  transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+                key={card.id}
+              >
+                <div className="flex items-center justify-center mb-4 text-3xl">
+                  {card.icons}
                 </div>
-              );
-            })}
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-semibold">{card.title}</h3>
+                  <p className="text-gray-300">{card.paragraph}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
