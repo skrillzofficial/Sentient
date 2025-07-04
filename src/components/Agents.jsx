@@ -111,11 +111,11 @@ const Agents = () => {
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <button className="flex items-center gap-1 px-6 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
+          <div className="flex justify-center items-center gap-2">
+            <button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
               <Eye size={16} /> Watch
             </button>
-            <button className="flex items-center gap-1 px-6 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
+            <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
               <Settings size={16} /> Manage
             </button>
           </div>
@@ -181,11 +181,11 @@ const Agents = () => {
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <button className="flex items-center gap-1 px-6 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
+          <div className="flex justify-center items-center gap-2">
+            <button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
               <Eye size={16} /> Watch
             </button>
-            <button className="flex items-center gap-1 px-6 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
+            <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
               <Settings size={16} /> Manage
             </button>
           </div>
@@ -251,15 +251,18 @@ const Agents = () => {
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <button className="flex items-center gap-1 px-6 py-2 bg-black text-blue-600 rounded-md text-sm hover:bg-blue-300  transition">
+          <div className="flex justify-center items-center gap-2">
+            <button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-600 rounded-md text-sm hover:bg-blue-300  transition">
               <Eye size={16} /> Watch
             </button>
-            <button className="flex items-center gap-1 px-6 py-2 bg-black text-purple-500 rounded-md text-sm hover:bg-purple-300 transition">
+            <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm hover:bg-purple-300 transition">
               <Settings size={16} /> Manage
             </button>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center items-center py-5">
+          <button className="flex justify-center  items-center gap-2 py-2 px-10 rounded-lg text-black text-sm bg-purple-900 hover:bg-purple-500 font-bold"><Brain size={20} color="black"/> Create New Agent</button>
       </div>
     </div>
   );
