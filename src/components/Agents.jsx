@@ -52,7 +52,7 @@ const Agents = () => {
       {/* 3 Agents container */}
       <div className="flex flex-col md:flex-col lg:flex-row gap-6 p-4 jusity-center items-center">
         {/* Agent 1 - Nexus Prime */}
-        <div className="p-4 rounded-lg shadow-sm space-y-4 w-[300px] md:w-[600px] lg:[400px] text-white bg-gray-800">
+        <div className="p-4 rounded-lg shadow-sm space-y-4 w-[300px] md:w-[600px] lg:[300px] text-white bg-gray-800">
           <div className="flex justify-between items-center">
             <h1 className="text-xl font-bold text-blue-500">Nexus Prime</h1>
             <button className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
