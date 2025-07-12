@@ -11,7 +11,7 @@ import {
 
 const Agents = () => {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900 ">
       <div className="flex flex-col items-center justify-center pt-10 md:pt-20 ">
         {/* Toggle Buttons Container */}
         <div className="w-full flex justify-center items-center">

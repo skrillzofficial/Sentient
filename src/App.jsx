@@ -3,6 +3,7 @@ import Home from './components/pages/Home'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Wallet from './components/Wallet';
 
+
 function App() {
   
 
