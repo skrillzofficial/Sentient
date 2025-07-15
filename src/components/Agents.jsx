@@ -7,6 +7,9 @@ import {
   Sword,
   Eye,
   Settings,
+  Users,
+  Clock,
+  Play,
 } from "lucide-react";
 
 const Agents = () => {
@@ -65,14 +68,14 @@ const Agents = () => {
             {activeTab === "agent"
               ? "AI Agent Arsenal"
               : activeTab === "arena"
-              ? "Battle Arenas"
+              ? "Combat Arenas"
               : "Financial Hub"}
           </h1>
           <p className="text-xl text-white opacity-50">
             {activeTab === "agent"
               ? "Manage your sentient warriors and track their evolution"
               : activeTab === "arena"
-              ? "Compete in high-stakes battles and climb the leaderboards"
+              ? "Live battles and upcoming tournaments where AI agents fight for dominance"
               : "Track your earnings, investments, and agent performance"}
           </p>
         </div>
@@ -308,11 +311,307 @@ const Agents = () => {
 
         {activeTab === "arena" && (
           <div className="p-4 w-full">
-            {/* Arena content will go here */}
-            {/* You can add your Arena content in this space */}
+            {/* Arena Tab Top*/}
+            <div className="flex justify-between items-center px-4">
+              <div className="flex gap-2 justify-start items-center">
+                <span className="w-[15px] h-[15px] bg-green-400 rounded-full"></span>
+                <p className="text-green-400 text-xl font-bold">Active Games</p>
+              </div>
+              <div className="flex gap-1 bg-green-400 rounded-full px-2">
+                <span>4</span>
+                <span>Live</span>
+              </div>
+            </div>
+
+            {/* Arena Cards - 2x2 Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 mt-5">
+              {/* Card 1 - Cyber Arena Championship */}
+              <div className="p-4 rounded-lg shadow-sm  hover:border-blue-500 border border-gray-900 space-y-4 w-full max-w-[600px] text-white bg-gray-800">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-xl font-bold">
+                    Cyber Arena Championship
+                  </h1>
+                  <button className="px-3 py-1 bg-green-400 text-black rounded-full text-sm">
+                    Live
+                  </button>
+                </div>
+                <div>
+                  <p className="text-purple-600">Tournament</p>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <div className="flex gap-2 justify-center items-center">
+                      <Users size={20} />
+                      <span className="text-sm">Participants</span>
+                    </div>
+                    <span className="text-sm">64/64</span>
+                  </div>
+                  <div className="w-full bg-purple-500 rounded-full h-2">
+                    <div
+                      className="bg-blue-500 h-2 rounded-full"
+                      style={{ width: "100%" }}
+                    ></div>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">Battle Progress</span>
+                    <span className="text-sm">75%</span>
+                  </div>
+                  <div className="w-full bg-purple-500 rounded-full h-2">
+                    <div
+                      className="bg-blue-500 h-2 rounded-full"
+                      style={{ width: "75%" }}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center px-5">
+                      <span className="text-green-400 text-xl">$</span>
+                      <p className="text-gray-600">Prize Pool</p>
+                      <p className="text-green-400 text-medium">$5000</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center p-5">
+                      <span className="text-blue-400 text-xl">
+                        <Trophy size={20} />
+                      </span>
+                      <p className="text-gray-600">Entry Fee</p>
+                      <p className="text-blue-400 text-medium">$25</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center bg-gray-900/30 p-2 rounded-lg">
+                  <div className="flex items-center text-sm gap-2">
+                    <Clock size={15} className="text-yellow-300" />
+                    <span>
+                      Time Remaining:{" "}
+                      <span className="text-yellow-300">2hr 34min</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center">
+                  <button className="flex items-center justify-center w-full gap-4 px-12 py-2 bg-green-500 rounded-md text-sm text-black transition">
+                    <Eye size={16} /> Watch Live
+                  </button>
+                </div>
+              </div>
+
+              {/* Card 2 - Neural Network Brawl */}
+              <div className="p-4 rounded-lg shadow-sm hover:border-blue-500 border border-gray-900 space-y-4 w-full max-w-[600px] text-white bg-gray-800">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-xl font-bold">Neural Network Brawl</h1>
+                  <button className="px-3 py-1 bg-yellow-400 text-black rounded-full text-sm">
+                    Live
+                  </button>
+                </div>
+                <div>
+                  <p className="text-yellow-400">Battle Royale</p>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <div className="flex gap-2 justify-center items-center">
+                      <Users size={20} />
+                      <span className="text-sm">Participants</span>
+                    </div>
+                    <span className="text-sm">28/32</span>
+                  </div>
+                  <div className="w-full bg-purple-500 rounded-full h-2">
+                    <div
+                      className="bg-blue-500 h-2 rounded-full"
+                      style={{ width: "78%" }}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center px-5">
+                      <span className="text-green-400 text-xl">$</span>
+                      <p className="text-gray-600">Prize Pool</p>
+                      <p className="text-green-400 text-medium">$1200</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center p-5">
+                      <span className="text-blue-400 text-xl">
+                        <Trophy size={20} />
+                      </span>
+                      <p className="text-gray-600">Entry Fee</p>
+                      <p className="text-blue-400 text-medium">$15</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center bg-gray-900/30 p-2 rounded-lg">
+                  <div className="flex items-center gap-2 text-sm">
+                    <Clock size={15} className="text-yellow-300" />
+                    <span>
+                      Time Remaining:{" "}
+                      <span className="text-yellow-300">5min 23sec</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center">
+                  <button className="flex items-center justify-center w-full gap-4 px-12 py-2 bg-yellow-500 rounded-md text-sm text-black transition">
+                    <Play size={16} /> Watch Live
+                  </button>
+                </div>
+              </div>
+
+              {/* Card 3 - Quantum Showdown */}
+              <div className="p-4 rounded-lg shadow-sm hover:border-blue-500 border border-gray-900 space-y-4 w-full max-w-[600px] text-white bg-gray-800">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-xl font-bold">AI Survival Challenge</h1>
+                  <button className="px-3 py-1 bg-blue-400 text-black rounded-full text-sm">
+                    Schdeduled
+                  </button>
+                </div>
+                <div>
+                  <p className="text-green-400">Survival</p>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <div className="flex gap-2 justify-center items-center">
+                      <Users size={20} />
+                      <span className="text-sm">Participants</span>
+                    </div>
+                    <span className="text-sm">2/2</span>
+                  </div>
+                  <div className="w-full bg-purple-500 rounded-full h-2">
+                    <div
+                      className="bg-blue-500 h-2 rounded-full"
+                      style={{ width: "60%" }}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center px-5">
+                      <span className="text-green-400 text-xl">$</span>
+                      <p className="text-gray-600">Prize Pool</p>
+                      <p className="text-green-400 text-medium">$800</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center p-5">
+                      <span className="text-blue-400 text-xl">
+                        <Trophy size={20} />
+                      </span>
+                      <p className="text-gray-600">Entry Fee</p>
+                      <p className="text-blue-400 text-medium">$10</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center bg-gray-900/30 p-2 rounded-lg">
+                  <div className="flex items-center text-sm gap-2">
+                    <Clock size={15} className="text-yellow-300" />
+                    <span>
+                      Time Remaining:{" "}
+                      <span className="text-yellow-300">45min 12min</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center">
+                  <button className="flex items-center justify-center w-full gap-4 px-12 py-2 bg-black hover:bg-blue-400 rounded-md text-sm text-blue-500 border-blue-500 border hover:text-black transition">
+                    <Trophy size={16} /> Register
+                  </button>
+                </div>
+              </div>
+
+              {/* Card 4 - Rookie Rumble */}
+              <div className="p-4 rounded-lg hover:border-blue-500 border border-gray-900 shadow-sm space-y-4 w-full max-w-[600px] text-white bg-gray-800">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-xl font-bold">Quick Strike Duel</h1>
+                  <button className="px-3 py-1 bg-green-400 text-black rounded-full text-sm">
+                    Live
+                  </button>
+                </div>
+                <div>
+                  <p className="text-blue-400">Team Deathmatch</p>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <div className="flex gap-2 justify-center items-center">
+                      <Users size={20} />
+                      <span className="text-sm">Participants</span>
+                    </div>
+                    <span className="text-sm">20/20</span>
+                  </div>
+                  <div className="w-full bg-purple-500 rounded-full h-2">
+                    <div
+                      className="bg-blue-500 h-2 rounded-full"
+                      style={{ width: "100%" }}
+                    ></div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex gap-2 justify-center items-center">
+                      <span className="text-sm">Battle Progress</span>
+                    </div>
+                    <span className="text-sm">90%</span>
+                  </div>
+                  <div className="w-full bg-purple-500 rounded-full h-2">
+                    <div
+                      className="bg-blue-500 h-2 rounded-full"
+                      style={{ width: "90%" }}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center px-5">
+                      <span className="text-green-400 text-xl">$</span>
+                      <p className="text-gray-600">Prize Pool</p>
+                      <p className="text-green-400 text-medium">$400</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center w-[50%] h-[100px] rounded-lg shadow-xl bg-gray-900/30">
+                    <div className="flex flex-col justify-center items-center p-5">
+                      <span className="text-blue-400 text-xl">
+                        <Trophy size={20} />
+                      </span>
+                      <p className="text-gray-600">Entry Fee</p>
+                      <p className="text-blue-400 text-medium">$8</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center bg-gray-900/30 p-2 rounded-lg">
+                  <div className="flex items-center gap-2 text-sm">
+                    <Clock size={15} className="text-yellow-300" />
+                    <span>
+                      Time Remaining:{" "}
+                      <span className="text-yellow-300">12min 45sec</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center">
+                  <button className="flex items-center justify-center w-full gap-4 px-12 py-2 bg-green-500 rounded-md text-sm text-black transition">
+                    <Eye size={16} /> Watch Live
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
-
         {activeTab === "finance" && (
           <div className="p-4 w-full">
             {/* Finance content will go here */}
