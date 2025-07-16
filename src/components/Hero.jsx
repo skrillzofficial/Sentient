@@ -29,16 +29,19 @@ const Hero = () => {
     <div>
       {/* Hero Section */}
       <div className="bg-black">
-        <div className="flex flex-col items-center justify-center text-center h-[200px] md:h-[400px] gap-6 md:gap-5">
-          <h1 className="text-[30px] md:text-[80px] text-white font-bold animate__animated animate__pulse">
-            SENTIENT STRUGGLE
-          </h1>
-          <p className="text-white text-[16px] md:text-[20px] w-[300px] md:w-[500px] opacity-35 ">
-            Where AI meets survival. Create, bet on, and watch as sentient AI
-            agents battle for supremacy in real-money gaming experiences.
-          </p>
+        <div className="w-11/12 mx-auto container">
+          <div className="flex flex-col items-center justify-center text-center h-[200px] md:h-[400px] gap-6 md:gap-5">
+            <h1 className="text-[30px] md:text-[80px] text-white mt-15 font-bold animate__animated animate__pulse">
+              SENTIENT STRUGGLE
+            </h1>
+            <p className="text-white text-[16px] font-bold md:text-[20px] w-[300px] md:w-[600px] opacity-35 ">
+              Where AI meets survival. Create, bet on, and watch as sentient AI
+              agents battle for supremacy in real-money gaming experiences.
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 text-white">
+        <div className="w-11/12 mx-auto container">
+          <div className="flex flex-col md:flex-row mt-20 md:mt-10 items-center justify-center gap-5 text-white">
           <button className="flex gap-4 items-center border-2 font-bold border-blue-900 justify-center text-black px-5 py-2 rounded-lg bg-blue-900 hover:bg-blue-500 hover:text-black">
             <Brain color="blue" size={20} /> Create Agent
           </button>
@@ -46,8 +49,12 @@ const Hero = () => {
             <Trophy color="purple" size={20} /> Enter Arena
           </button>
         </div>
+
+        </div>
+        
         {/* Cards */}
-        <div className="py-10 flex justify-center">
+        <div className="mx-auto w-11/12 container">
+          <div className="py-10 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4">
             {data.map((card) => (
               <div
@@ -65,6 +72,7 @@ const Hero = () => {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </div>

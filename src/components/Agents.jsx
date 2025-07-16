@@ -9,10 +9,74 @@ import {
   Settings,
   Users,
   Clock,
+  CreditCard,
   Play,
+  WalletCards,
+  TrendingUp,
+  ArrowDownLeft,
+  ArrowUpRight,
+  Minus,
+  ArrowDown,
+  ArrowDownRight,
 } from "lucide-react";
 
 const Agents = () => {
+  // Data arrays moved outside return for better organization
+  const FinanceCards = [
+    {
+      id: 1,
+      title: "Available Balance",
+      amount: "$4,691.50",
+      change: "+12.5%",
+      period: "this week",
+      trend: "up",
+      icon: <WalletCards size={40} className="text-green-500" />,
+      bgColor: "bg-green-200",
+      textColor: "text-gray-900",
+      dataColor: "text-green-500",
+      borderColor: "border-green-900 border-2",
+    },
+    {
+      id: 2,
+      title: "Pending",
+      amount: "$100",
+      change: "+3.2%",
+      period: "this month",
+      trend: "up",
+      icon: <History size={40} className="text-orange-500" />,
+      bgColor: "bg-gray-900",
+      textColor: "text-gray-300",
+      dataColor: "text-orange-500",
+      borderColor: "border-orange-500 border",
+    },
+    {
+      id: 3,
+      title: "Total Earnings",
+      amount: "$2,340.75",
+      change: "-8.1%",
+      period: "since last month",
+      trend: "down",
+      icon: <TrendingUp size={40} className="text-purple-500" />,
+      bgColor: "bg-gray-900",
+      textColor: "text-gray-300",
+      dataColor: "text-purple-500",
+      borderColor: "border-purple-500 border",
+    },
+    {
+      id: 4,
+      title: "Total Deposits",
+      amount: "$2,500",
+      change: "15%",
+      period: "target progress",
+      trend: "neutral",
+      icon: <ArrowDownLeft size={40} className="text-blue-500" />,
+      bgColor: "bg-gray-900",
+      textColor: "text-gray-300",
+      dataColor: "text-blue-500",
+      borderColor: "border-blue-500 border",
+    },
+  ];
+
   const [activeTab, setActiveTab] = useState("agent");
 
   const handleTabChange = (tab) => {
@@ -21,9 +85,9 @@ const Agents = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 ">
-      <div className="flex flex-col items-center justify-center pt-10 md:pt-20 ">
+      <div className="flex flex-col w-11/12 container mx-auto pt-10 md:pt-20 ">
         {/* Toggle Buttons Container */}
-        <div className="w-full flex justify-center items-center">
+        <div className=" flex flex-col md:flex-row justify-center items-center">
           <div className="inline-flex rounded-lg shadow-md p-1" role="group">
             <button
               onClick={() => handleTabChange("agent")}
@@ -69,14 +133,14 @@ const Agents = () => {
               ? "AI Agent Arsenal"
               : activeTab === "arena"
               ? "Combat Arenas"
-              : "Financial Hub"}
+              : "Financial Command Center"}
           </h1>
           <p className="text-xl text-white opacity-50">
             {activeTab === "agent"
               ? "Manage your sentient warriors and track their evolution"
               : activeTab === "arena"
               ? "Live battles and upcoming tournaments where AI agents fight for dominance"
-              : "Track your earnings, investments, and agent performance"}
+              : "Track earnings, manage investments, and monitor your empire's growth"}
           </p>
         </div>
 
@@ -610,12 +674,95 @@ const Agents = () => {
                 </div>
               </div>
             </div>
+            {/* Create Tournament Button */}
+            <div className="flex justify-center items-center mt-5 mb-10">
+              <div className="flex items-center justify-center text-black gap-5 bg-purple-500 px-5 py-2 rounded-lg font-semibold hover:bg-purple-400">
+                <Trophy size={20} />
+                <p>Create Tournament</p>
+              </div>
+            </div>
           </div>
         )}
         {activeTab === "finance" && (
-          <div className="p-4 w-full">
-            {/* Finance content will go here */}
-            {/* You can add your Finance content in this space */}
+          <div className="p-4 w-full mt-5">
+            {/* Top cards - Responsive grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-7">
+              {/* Card 1 */}
+              <div className="bg-gray-900/30 border space-y-2 border-green-400 rounded-lg p-4 sm:p-6">
+                <p className="text-gray-300">Total Balance</p>
+                <div className="flex text-green-400 justify-between items-center">
+                  <span className="text-lg sm:text-[20px] font-bold">
+                    $4,691.50
+                  </span>
+                  <WalletCards className="w-8 h-8 sm:w-10 sm:h-10" />
+                </div>
+                <div className="flex items-center gap-1 text-green-400 text-sm sm:text-base">
+                  <ArrowUpRight className="w-4 h-4" />
+                  <div className="flex gap-2">
+                    <p>
+                      <span>+12.5% </span>from last week
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-gray-900/30 border border-blue-400 space-y-2 rounded-lg p-4 sm:p-6">
+                <p className="text-gray-300">Total Active Bets</p>
+                <div className="flex text-blue-400 justify-between items-center">
+                  <span className="text-lg sm:text-[20px] font-bold">
+                    $1,249.00
+                  </span>
+                  <CreditCard className="w-8 h-8 sm:w-10 sm:h-10" />
+                </div>
+                <div className="flex gap-2 items-center text-blue-400 text-sm sm:text-base">
+                  <ArrowUpRight className="w-4 h-4" />
+                  <div className="flex gap-2">
+                    <p>
+                      <span>+8.2% </span>this season
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-gray-900/30 border border-purple-400 space-y-2 rounded-lg p-4 sm:p-6">
+                <p className="text-gray-300">Today's Profit</p>
+                <div className="flex text-purple-400 justify-between items-center">
+                  <span className="text-lg sm:text-[20px] font-bold">
+                    $342.80
+                  </span>
+                  <TrendingUp className="w-8 h-8 sm:w-10 sm:h-10" />
+                </div>
+                <div className="flex gap-2 items-center text-purple-400 text-sm sm:text-base">
+                  <ArrowUpRight className="w-4 h-4" />
+                  <div className="flex gap-2">
+                    <p>
+                      <span>+18.9% </span>vs yesterday
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 */}
+              <div className="bg-gray-900/30 border border-yellow-400 space-y-2 rounded-lg p-4 sm:p-6">
+                <p className="text-gray-300">Agent ROI</p>
+                <div className="flex text-yellow-400 justify-between items-center">
+                  <span className="text-lg sm:text-[20px] font-bold">
+                    $156.00
+                  </span>
+                  <DollarSign className="w-8 h-8 sm:w-10 sm:h-10" />
+                </div>
+                <div className="flex gap-2 items-center text-red-400 text-sm sm:text-base">
+                  <ArrowDownRight className="w-4 h-4" />
+                  <div className="flex gap-2">
+                    <p>
+                      <span>-2.1% </span>vs yesterday
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
