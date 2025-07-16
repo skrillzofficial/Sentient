@@ -13,67 +13,67 @@ import {
   Play,
   WalletCards,
   TrendingUp,
+  ArrowRight,
   ArrowDownLeft,
   ArrowUpRight,
   Minus,
+  Plus,
   ArrowDown,
   ArrowDownRight,
 } from "lucide-react";
 
 const Agents = () => {
   // Data arrays moved outside return for better organization
-  const FinanceCards = [
+  const transactions = [
     {
       id: 1,
-      title: "Available Balance",
-      amount: "$4,691.50",
-      change: "+12.5%",
-      period: "this week",
-      trend: "up",
-      icon: <WalletCards size={40} className="text-green-500" />,
-      bgColor: "bg-green-200",
-      textColor: "text-gray-900",
-      dataColor: "text-green-500",
-      borderColor: "border-green-900 border-2",
+      type: "credit",
+      icon: <Plus className="text-green-500" />,
+      merchant: "Nexus Prime Victory",
+      date: "2024-01-20 14:30",
+      amount: "+$125.50",
+      status: "Completed",
+      statusColor: "text-green-500",
     },
     {
       id: 2,
-      title: "Pending",
-      amount: "$100",
-      change: "+3.2%",
-      period: "this month",
-      trend: "up",
-      icon: <History size={40} className="text-orange-500" />,
-      bgColor: "bg-gray-900",
-      textColor: "text-gray-300",
-      dataColor: "text-orange-500",
-      borderColor: "border-orange-500 border",
+      type: "debit",
+      icon: <Minus className="text-red-500" />,
+      merchant: "Shadow Weaver Battle Entry",
+      date: "2024-01-18 09:15",
+      amount: "-$89.99",
+      status: "Completed",
+      statusColor: "text-green-500",
     },
     {
       id: 3,
-      title: "Total Earnings",
-      amount: "$2,340.75",
-      change: "-8.1%",
-      period: "since last month",
-      trend: "down",
-      icon: <TrendingUp size={40} className="text-purple-500" />,
-      bgColor: "bg-gray-900",
-      textColor: "text-gray-300",
-      dataColor: "text-purple-500",
-      borderColor: "border-purple-500 border",
+      type: "credit",
+      icon: <ArrowDownLeft className="text-blue-500" />,
+      merchant: "Credit Card Deposit",
+      date: "2024-01-15 16:45",
+      amount: "+$200.00",
+      status: "Processing",
+      statusColor: "text-yellow-500",
     },
     {
       id: 4,
-      title: "Total Deposits",
-      amount: "$2,500",
-      change: "15%",
-      period: "target progress",
-      trend: "neutral",
-      icon: <ArrowDownLeft size={40} className="text-blue-500" />,
-      bgColor: "bg-gray-900",
-      textColor: "text-gray-300",
-      dataColor: "text-blue-500",
-      borderColor: "border-blue-500 border",
+      type: "credit",
+      icon: <Plus className="text-green-500" />,
+      merchant: "Iron Guardian Victory",
+      date: "2024-01-10 11:20",
+      amount: "+$5.25",
+      status: "Completed",
+      statusColor: "text-green-500",
+    },
+    {
+      id: 5,
+      type: "Debit",
+      icon: <ArrowUpRight className="text-green-500" />,
+      merchant: "Bank Transfer",
+      date: "2024-01-10 11:20",
+      amount: "-$5.25",
+      status: "Pending",
+      statusColor: "text-yellow-500",
     },
   ];
 
@@ -763,8 +763,68 @@ const Agents = () => {
                 </div>
               </div>
             </div>
+
+            <div className="mt-6">{/* Graph and chart comes here */}</div>
+
+            {/* Recent transactions */}
+            {/* Tab Content */}
+            {transactions && (
+              <div className="space-y-4 bg-gray-800/30 p-4 rounded-lg">
+                <h3 className="text-blue-400 font-medium text-xl mb-4">
+                  Recent Transactions
+                </h3>
+                <div className="space-y-3">
+                  {transactions.map((transaction) => (
+                    <div
+                      key={transaction.id}
+                      className="flex justify-between items-center p-4 bg-gray-900/30 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      <div className="flex gap-4 items-center">
+                        <div
+                          className={`p-3 rounded-full ${
+                            transaction.type === "credit"
+                              ? "bg-green-900/30"
+                              : "bg-red-900/30"
+                          }`}
+                        >
+                          {transaction.icon}
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-300">{transaction.merchant}</p>
+                          <p className="text-gray-500 text-sm">
+                            {transaction.date}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <p
+                          className={`font-semibold ${
+                            transaction.type === "credit"
+                              ? "text-green-500"
+                              : "text-red-500"
+                          }`}
+                        >
+                          {transaction.amount}
+                        </p>
+                        <p className={`text-sm ${transaction.statusColor}`}>
+                          {transaction.status}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
+        {/* Buttons */}
+        <div className="mt-5 mb-15">
+          <div className="flex flex-col md:flex-row gap-3 justify-center items-center">
+            <button className="flex items-center gap-4 bg-green-400 border border-black py-2 px-5 rounded-lg"><WalletCards size={20} /> Deposit Fund</button>
+            <button className="flex items-center bg-black border border-blue-400 text-blue-400 py-2 px-5 rounded-lg gap-2"><CreditCard size={20} />Withdraw</button>
+          </div>
+          
+        </div>
       </div>
     </div>
   );
