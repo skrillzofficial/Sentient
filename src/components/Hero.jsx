@@ -1,5 +1,6 @@
 import React from "react";
 import { Trophy, Brain, DollarSign } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const data = [
@@ -42,12 +43,12 @@ const Hero = () => {
         </div>
         <div className="w-11/12 mx-auto container">
           <div className="flex flex-col md:flex-row mt-20 md:mt-10 items-center justify-center gap-5 text-white">
-          <button className="flex gap-4 items-center border-2 font-bold border-blue-900 justify-center text-black px-5 py-2 rounded-lg bg-blue-900 hover:bg-blue-500 hover:text-black">
+          <Link to={"/createAgent"}> <button className="flex gap-4 items-center border-2 font-bold border-blue-900 justify-center text-black px-5 py-2 rounded-lg bg-blue-900 hover:bg-blue-500 hover:text-black">
             <Brain color="blue" size={20} /> Create Agent
-          </button>
-          <button className="flex gap-4 items-center border-2 font-bold border-purple-500 justify-center text-purple-500 px-5 py-2 rounded-lg bg-black hover:bg-purple-500 hover:text-black">
+          </button></Link>
+          <Link to={"/enterArena"}><button className="flex gap-4 items-center border-2 font-bold border-purple-500 justify-center text-purple-500 px-5 py-2 rounded-lg bg-black hover:bg-purple-500 hover:text-black">
             <Trophy color="purple" size={20} /> Enter Arena
-          </button>
+          </button></Link>
         </div>
 
         </div>

@@ -1,8 +1,9 @@
 import React from 'react'
-import Header from '../Header'
-import Hero from '../Hero'
-import Agents from '../Agents'
-import Footer from '../Footer'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import Agents from '../components/Agents'
+import Footer from '../components/Footer'
+
 
 const Home = () => {
   return (
