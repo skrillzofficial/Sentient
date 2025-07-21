@@ -213,12 +213,17 @@ const Agents = () => {
                 </div>
 
                 <div className="flex justify-center items-center gap-2">
-                  <Link to={'/watch'}><button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
-                    <Eye size={16} /> Watch
-                  </button></Link>
-                 <Link to={'/manage'}> <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
-                    <Settings size={16} /> Manage
-                  </button></Link>
+                  <Link to={"/watch"}>
+                    <button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
+                      <Eye size={16} /> Watch
+                    </button>
+                  </Link>
+                  <Link to={"/manage"}>
+                    {" "}
+                    <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
+                      <Settings size={16} /> Manage
+                    </button>
+                  </Link>
                 </div>
               </div>
 
@@ -285,12 +290,16 @@ const Agents = () => {
                 </div>
 
                 <div className="flex justify-center items-center gap-2">
-                   <Link to={'/watch'}><button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
-                    <Eye size={16} /> Watch
-                  </button></Link>
-                 <Link to={'/manage'}><button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
-                    <Settings size={16} /> Manage
-                  </button></Link> 
+                  <Link to={"/watch"}>
+                    <button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-500 rounded-md text-sm  hover:bg-blue-300 transition">
+                      <Eye size={16} /> Watch
+                    </button>
+                  </Link>
+                  <Link to={"/manage"}>
+                    <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm  hover:bg-purple-300 transition">
+                      <Settings size={16} /> Manage
+                    </button>
+                  </Link>
                 </div>
               </div>
 
@@ -357,19 +366,27 @@ const Agents = () => {
                 </div>
 
                 <div className="flex justify-center items-center gap-2">
-                  <Link to={'/watch'}> <button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-600 rounded-md text-sm hover:bg-blue-300  transition">
-                    <Eye size={16} /> Watch
-                  </button></Link>
-                 <Link to={"/manage"}> <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm hover:bg-purple-300 transition">
-                    <Settings size={16} /> Manage
-                  </button></Link>
+                  <Link to={"/watch"}>
+                    {" "}
+                    <button className="flex items-center gap-1 px-12 py-2 bg-black text-blue-600 rounded-md text-sm hover:bg-blue-300  transition">
+                      <Eye size={16} /> Watch
+                    </button>
+                  </Link>
+                  <Link to={"/manage"}>
+                    {" "}
+                    <button className="flex items-center gap-1 px-12 py-2 bg-black text-purple-500 rounded-md text-sm hover:bg-purple-300 transition">
+                      <Settings size={16} /> Manage
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="flex justify-center items-center py-5">
-              <Link to={"/createAgent"}><button className="flex justify-center items-center gap-2 py-2 px-10 rounded-lg text-black text-sm bg-purple-900 hover:bg-purple-500 font-bold">
-                <Brain size={20} color="black" /> Create New Agent
-              </button></Link>
+              <Link to={"/createAgent"}>
+                <button className="flex justify-center items-center cursor-pointer gap-2 py-2 px-10 rounded-lg text-black text-sm bg-purple-900 hover:bg-purple-500 font-bold">
+                  <Brain size={20} color="black" /> Create New Agent
+                </button>
+              </Link>
             </div>
           </>
         )}
@@ -533,7 +550,7 @@ const Agents = () => {
                 </div>
               </div>
 
-              {/* Card 3 - Quantum Showdown */}
+              {/* Card 3 - AI Survival Challenge */}
               <div className="p-4 rounded-lg shadow-sm hover:border-blue-500 border border-gray-900 space-y-4 w-full max-w-[600px] text-white bg-gray-800">
                 <div className="flex justify-between items-center">
                   <h1 className="text-xl font-bold">AI Survival Challenge</h1>
@@ -598,7 +615,7 @@ const Agents = () => {
                 </div>
               </div>
 
-              {/* Card 4 - Rookie Rumble */}
+              {/* Card 4 - Quick Strike Duel */}
               <div className="p-4 rounded-lg hover:border-blue-500 border border-gray-900 shadow-sm space-y-4 w-full max-w-[600px] text-white bg-gray-800">
                 <div className="flex justify-between items-center">
                   <h1 className="text-xl font-bold">Quick Strike Duel</h1>
@@ -791,7 +808,9 @@ const Agents = () => {
                           {transaction.icon}
                         </div>
                         <div>
-                          <p className="font-medium text-gray-300">{transaction.merchant}</p>
+                          <p className="font-medium text-gray-300">
+                            {transaction.merchant}
+                          </p>
                           <p className="text-gray-500 text-sm">
                             {transaction.date}
                           </p>
@@ -821,10 +840,18 @@ const Agents = () => {
         {/* Buttons */}
         <div className="mt-5 mb-15">
           <div className="flex flex-col md:flex-row gap-3 justify-center items-center">
-            <button className="flex items-center gap-4 bg-green-400 border border-black py-2 px-5 rounded-lg"><WalletCards size={20} /> Deposit Fund</button>
-            <button className="flex items-center bg-black border border-blue-400 text-blue-400 py-2 px-5 rounded-lg gap-2"><CreditCard size={20} />Withdraw</button>
+            <Link to={"/wallet"}>
+              <button className="flex items-center gap-4 bg-green-400 border cursor-pointer border-black py-2 px-5 rounded-lg">
+                <WalletCards size={20} /> Deposit Fund
+              </button>
+            </Link>
+            <Link to={"/wallet"}>
+              <button className="flex items-center bg-black border cursor-pointer border-blue-400 text-blue-400 py-2 px-5 rounded-lg gap-2">
+                <CreditCard size={20} />
+                Withdraw
+              </button>
+            </Link>
           </div>
-          
         </div>
       </div>
     </div>
